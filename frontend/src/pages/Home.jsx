@@ -17,13 +17,14 @@ const Home = () => {
         .then(data => {
             console.log(data)
             setAllData(data)
+            console.log(renderTrigger)
         })
     },[renderTrigger])
 
     return ( 
 
         <main>
-            <p className="text-center">bank balance</p>
+            <p className="text-center mb-4">bank balance: {`${allData.bank_balance}`}</p>
         <section className="flex justify-between">
 
             <section>
@@ -49,7 +50,7 @@ const Home = () => {
             
             <section>
                 <Capacity 
-                currentcapacity={allData.current_workload}
+                currentcapacity={allData?.current_workload}
                 maxcapacity={allData.max_workload}
                 />
             </section>
