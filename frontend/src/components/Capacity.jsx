@@ -2,20 +2,22 @@ import { useEffect,useState } from "react"
 
 const Capacity = ({currentcapacity,capacityvalue}) => {
     
-    const [capacityBar,setCapacityBar] = useState("")
+    
+    const [capacityBar,setCapacityBar] = useState("pt-[300px]")
 
     useEffect(() => {
         const valueBar = (300 - (currentcapacity * 3)).toString()
         const valueBarPadding = `pt-[${valueBar}px]`
+        
         setCapacityBar(`${valueBarPadding}`)
+        
+        
     },[currentcapacity])
 
-  /*   console.log(currentcapacity)
-    const valueBar = (300 - (currentcapacity * 3)).toString()
+
     
-    const valueBarPadding = `pt-[${valueBar}px]`
-    console.log(valueBarPadding)
- */
+    console.log(capacityBar? "true" : "false")
+
     return (
         <main >
             <h1>capacity</h1>

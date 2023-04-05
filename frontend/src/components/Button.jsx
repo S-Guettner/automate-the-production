@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
 
-const Button = ({number,currentworker,price,setTrigger}) => {
+const Button = ({number,currentworker,price,setTrigger,max_workload}) => {
 
     const newWorkerNumber = currentworker + number
     const newWorkerValue = newWorkerNumber * price
@@ -10,23 +10,29 @@ const Button = ({number,currentworker,price,setTrigger}) => {
 
     
     const clickHandler = () => {
-        fetch(`http://localhost:9090/api/v1/new_worker`, {
-            method: "POST",
-            headers: {
-                    'Content-Type': 'application/json'
-            },
-            body: JSON.stringify
-                (
-                    
-                    {
-                        "current_workload":newWorkerNumber,
-                        "val_current_workload":newWorkerValue
+        if(currentworker + number <= max_workload){
+
+            fetch(`http://localhost:9090/api/v1/new_worker`, {
+                method: "POST",
+                headers: {
+                        'Content-Type': 'application/json'
+                },
+                body: JSON.stringify
+                    (
                         
-                    }
-                )
-            })
-            .then(() => setTrigger(prev => !prev))
-            .then(console.log(newWorkerValue))
+                        {
+                            "current_workload":newWorkerNumber,
+                            "val_current_workload":newWorkerValue
+                            
+                        }
+                    )
+                })
+                .then(() => setTrigger(prev => !prev))
+                /* .then(console.log(newWorkerValue)) */
+        }
+        else{
+            window.alert("No capacity! Sell worker!")
+        }
             
 
     }

@@ -17,14 +17,14 @@ const Home = () => {
         .then(data => {
             console.log(data)
             setAllData(data)
-            console.log(renderTrigger)
+            /* console.log(renderTrigger) */
         })
     },[renderTrigger])
 
     return ( 
 
         <main>
-            <p className="text-center mb-4">bank balance: {`${allData.bank_balance}`}</p>
+            <p className="text-center mb-4">bank balance: {`${allData.bank_balance}`} €</p>
         <section className="flex justify-between">
 
             <section>
@@ -33,18 +33,21 @@ const Home = () => {
                 price={allData.price}
                 setTrigger={setRenderTrigger}
                 currentworker={allData.current_workload}
+                max_workload={allData.max_workload}
                 />
                 <Button 
                 number={5}
                 price={allData.price}
                 setTrigger={setRenderTrigger}
                 currentworker={allData.current_workload}
+                max_workload={allData.max_workload}
                 />
                 <Button 
                 number={10}
                 price={allData.price}
                 setTrigger={setRenderTrigger}
                 currentworker={allData.current_workload}
+                max_workload={allData.max_workload}
                 />
             </section>
             
