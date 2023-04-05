@@ -24,7 +24,7 @@ const Capacity = ({currentcapacity,capacityvalue}) => {
             <p>{`${currentcapacity} worker`}</p>
             <h1>capacity value</h1>
             <p>{`${capacityvalue} €`}</p>
-            <p>{`${capacityBar}`}</p>
+            
 
             <div style={{paddingTop:capacityBar + "px"}} className={`border-2 h-[300px]`}>
                 <div className="bg-yellow-400 h-full">
