@@ -18,7 +18,7 @@ const Home = () => {
             console.log(data)
             setAllData(data)
         })
-    },[])
+    },[renderTrigger])
 
     return ( 
 
@@ -31,16 +31,19 @@ const Home = () => {
                 number={1}
                 price={allData.price}
                 setTrigger={setRenderTrigger}
+                currentworker={allData.current_workload}
                 />
                 <Button 
                 number={5}
                 price={allData.price}
                 setTrigger={setRenderTrigger}
+                currentworker={allData.current_workload}
                 />
                 <Button 
                 number={10}
                 price={allData.price}
                 setTrigger={setRenderTrigger}
+                currentworker={allData.current_workload}
                 />
             </section>
             
@@ -52,7 +55,10 @@ const Home = () => {
             </section>
 
             <section>
-                <SellButton />
+                <SellButton
+                capacityvalue={allData.val_current_workload}
+                setTrigger={setRenderTrigger}
+                />
             </section>
 
 
