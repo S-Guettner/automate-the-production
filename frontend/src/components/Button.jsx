@@ -19,8 +19,12 @@ const Button = ({number,currentworker,price,setTrigger}) => {
             },
             body: JSON.stringify
                 (
-                    {"current_workload":newWorkerNumber},
-                    {"val_current_workload":newWorkerValue}
+                    
+                    {
+                        "current_workload":newWorkerNumber,
+                        "val_current_workload":newWorkerValue
+                        
+                    }
                 )
             })
             .then(() => setTrigger(prev => !prev))

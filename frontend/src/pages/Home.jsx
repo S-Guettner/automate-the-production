@@ -52,6 +52,7 @@ const Home = () => {
                 <Capacity 
                 currentcapacity={allData?.current_workload}
                 maxcapacity={allData.max_workload}
+                capacityvalue={allData.val_current_workload}
                 />
             </section>
 
