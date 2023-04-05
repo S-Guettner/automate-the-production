@@ -1,6 +1,7 @@
 import  express  from "express"
 import cors from "cors"
 import mongoose from "mongoose"
+import dataSet from "./models/dataModel.js"
 import "./env_config.js"
 
 
@@ -13,6 +14,8 @@ const PORT_CLIENT = process.env.PORT_CLIENT
 const DB_USER = process.env.DB_USER
 const DB_PASS = process.env.DB_PASS
 
+const DATASET_ID = process.env.DATASET_ID
+
 app.use(cors(
     {
         origin: '*',
@@ -24,10 +27,40 @@ app.use(cors(
     ))
 
 
+app.post('/api/v1/new_worker' , async (req,res) => {
+    try {
+        const data = await dataSet.findByIdAndUpdate(DATASET_ID, req.body)
+        res.status(200).json(data)
+
+    } catch (err) {
+        console.log(err.message)
+        res.status(500).json({message: err.message})
+    }
+})
 
 
+app.get('/api/v1/data', async (req,res) => {
+    try {
+        const data = await dataSet.findById(DATASET_ID)
+        res.status(200).json(data)
+
+    } catch (err) {
+        console.log(err.message)
+        res.status(500).json({message: err.message})
+    }
+})
 
 
+app.post('/api/v1/sell_workforce' , async (req,res) => {
+    try {
+        const data = await dataSet.findByIdAndUpdate(DATASET_ID, req.body)
+        res.status(200).json(data)
+
+    } catch (err) {
+        console.log(err.message)
+        res.status(500).json({message: err.message})
+    }
+})
 
 
 
