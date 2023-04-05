@@ -1,11 +1,11 @@
-import { useEffect } from "react"
+
 
 const SellButton = ({setTrigger,capacityvalue,balance}) => {
 
     const newBankBalance = balance + capacityvalue
     
     const clickHandler = () => {
-        fetch(`https://automate-the-production.vercel.app/api/v1/sell_workforce` , {
+        fetch(`http://localhost:9090/api/v1/sell_workforce` , {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
