@@ -12,7 +12,7 @@ const Home = () => {
     const [renderTrigger,setRenderTrigger] = useState(false)
 
     useEffect( () => {
-        fetch(`http://localhost:9090/api/v1/data`)
+        fetch(`https://automate-the-production.vercel.app/api/v1/data`)
         .then(res => res.json())
         .then(data => {
             console.log(data)

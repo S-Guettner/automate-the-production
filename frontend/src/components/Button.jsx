@@ -12,7 +12,7 @@ const Button = ({number,currentworker,price,setTrigger,max_workload}) => {
     const clickHandler = () => {
         if(currentworker + number <= max_workload){
 
-            fetch(`http://localhost:9090/api/v1/new_worker`, {
+            fetch(`https://automate-the-production.vercel.app/api/v1/new_worker`, {
                 method: "POST",
                 headers: {
                         'Content-Type': 'application/json'
