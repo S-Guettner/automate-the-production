@@ -25,7 +25,7 @@ const SellButton = ({setTrigger,capacityvalue,balance}) => {
 
 
     return ( 
-        <button onClick={clickHandler}>Sell</button>
+        <button className="block w-10 shadow-xl border-2 m-4 border-neutral-200" onClick={clickHandler}>Sell</button>
    )
 }
  
