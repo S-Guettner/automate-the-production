@@ -18,7 +18,7 @@ const DATASET_ID = process.env.DATASET_ID
 
 app.use(cors(
     {
-        origin: 'https://automate-the-production-frontend.vercel.app',
+        origin: '*',
         methods: ['GET', 'POST'],
         allowedHeaders: ['Content-Type', 'Authorization'],
         preflightContinue: false,
