@@ -1,7 +1,7 @@
 import  express  from "express"
 import cors from "cors"
 import mongoose from "mongoose"
-import dataSet from "./models/dataModel.js"
+import dataSet from "./dataModel.js"
 import "./env_config.js"
 
 
