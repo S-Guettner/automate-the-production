@@ -3,14 +3,14 @@ import { useEffect,useState } from "react"
 const Capacity = ({currentcapacity,capacityvalue}) => {
     
     
-    const [capacityBar,setCapacityBar] = useState("pt-[300px]")
+    const [capacityBar,setCapacityBar] = useState("")
 
     useEffect(() => {
         
         const valueBar = (300 - (currentcapacity * 3)).toString()
-        const valueBarPadding = `pt-[${valueBar}px]`
+        /* const valueBarPadding = `pt-[${valueBar}px]` */
         
-        setCapacityBar(`${valueBarPadding}`)
+        setCapacityBar(valueBar)
         
     },[currentcapacity])
 
@@ -25,7 +25,8 @@ const Capacity = ({currentcapacity,capacityvalue}) => {
             <h1>capacity value</h1>
             <p>{`${capacityvalue} €`}</p>
             <p>{`${capacityBar}`}</p>
-            <div className={`border-2 h-[300px]  ${capacityBar}`}>
+
+            <div style={{paddingTop:capacityBar + "px"}} className={`border-2 h-[300px]`}>
                 <div className="bg-yellow-400 h-full">
                     
                 </div>
