@@ -76,4 +76,4 @@ mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@productiondata.skhzx9i.mon
 .catch((err) => console.log(err + "ERROR - not able to connect to DB 👎"))
 
 // fixed deployment error !!!!!!
-/* export default app */
+export default app
