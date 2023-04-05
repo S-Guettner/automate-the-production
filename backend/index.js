@@ -73,7 +73,7 @@ mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@productiondata.skhzx9i.mon
     app.listen(PORT_SERVER, () => console.log("Server running on PORT"+ " " + PORT_SERVER + " 👍"))
     console.log("Connected to DB 👍")
 })
-.catch((err) => console.log("ERROR - not able to connect to DB 👎"))
+.catch((err) => console.log(err + "ERROR - not able to connect to DB 👎"))
 
 // fixed deployment error !!!!!!
 export default app
