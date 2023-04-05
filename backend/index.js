@@ -39,7 +39,7 @@ app.post('/api/v1/new_worker' , async (req,res) => {
 })
 
 
-app.get('/api/v1/data', async (req,res) => {
+app.get('/api/v1/data',cors(), async (req,res) => {
     try {
         const data = await dataSet.findById(DATASET_ID)
         res.status(200).json(data)
