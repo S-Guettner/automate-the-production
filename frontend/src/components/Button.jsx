@@ -2,8 +2,6 @@ import { useEffect,useState } from "react";
 
 const Button = ({number,currentworker,price,setTrigger}) => {
 
-    const [newWorkerValueState,setNewWorkerValueState] = useState(0)
-
     const newWorkerNumber = currentworker + number
     const newWorkerValue = newWorkerNumber * price
 

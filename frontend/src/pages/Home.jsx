@@ -60,6 +60,7 @@ const Home = () => {
                 <SellButton
                 capacityvalue={allData.val_current_workload}
                 setTrigger={setRenderTrigger}
+                balance={allData.bank_balance}
                 />
             </section>
 
