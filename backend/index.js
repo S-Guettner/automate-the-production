@@ -18,7 +18,7 @@ const DATASET_ID = process.env.DATASET_ID
 
 app.use(cors(
     {
-        origin: 'https://automate-the-production.vercel.app',
+        origin: 'https://automate-the-production-frontend.vercel.app/',
         methods: ['GET', 'POST'],
         allowedHeaders: ['Content-Type', 'Authorization'],
         preflightContinue: false,
@@ -75,5 +75,5 @@ mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASS}@productiondata.skhzx9i.mon
 })
 .catch((err) => console.log("ERROR - not able to connect to DB 👎"))
 
-// fixed deployment error !!!!!!1
+// fixed deployment error !!!!!!
 export default app
